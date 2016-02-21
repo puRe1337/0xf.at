@@ -49,7 +49,7 @@ int main( void ) {
 
 	auto end = std::chrono::high_resolution_clock::now( );
 
-	std::cout << "took: " << std::chrono::duration_cast< std::chrono::milliseconds >( end - start ).count( ) << " min" << std::endl;
+	std::cout << "took: " << std::chrono::duration_cast< std::chrono::minutes >( end - start ).count( ) << " min" << std::endl;
 
 	std::cin.ignore( );
 	std::cin.get( );
