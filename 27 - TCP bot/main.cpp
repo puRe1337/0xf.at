@@ -2,7 +2,7 @@
 #include "Client.h"
 
 int main( ) {
-	SetConsoleTitle( "0xfat TCP Bot" );
+	SetConsoleTitle( "0xf.at TCP Bot" );
 	try
 	{
 		Client client( "212.17.118.125", 2727 );
