@@ -15,23 +15,42 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "19 - Telephone codes", "19 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "18 - Morse code", "18 - Morse code\18 - Morse code.vcxproj", "{631B8319-11BF-4444-95FF-7C4647406708}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "33 - Bcrypt cracking", "33 - Bcrypt cracking\33 - Bcrypt cracking.vcxproj", "{207FB284-A38E-4613-9A2D-CE5B476D5F6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{967111CD-78A5-4426-9FE8-433CFC20BF35}.Release|x64.ActiveCfg = Release|x64
+		{967111CD-78A5-4426-9FE8-433CFC20BF35}.Release|x64.Build.0 = Release|x64
 		{967111CD-78A5-4426-9FE8-433CFC20BF35}.Release|x86.ActiveCfg = Release|Win32
 		{967111CD-78A5-4426-9FE8-433CFC20BF35}.Release|x86.Build.0 = Release|Win32
+		{C30A921F-2494-4221-BE2F-E6457D7966E7}.Release|x64.ActiveCfg = Release|x64
+		{C30A921F-2494-4221-BE2F-E6457D7966E7}.Release|x64.Build.0 = Release|x64
 		{C30A921F-2494-4221-BE2F-E6457D7966E7}.Release|x86.ActiveCfg = Release|Win32
 		{C30A921F-2494-4221-BE2F-E6457D7966E7}.Release|x86.Build.0 = Release|Win32
+		{B51275BA-71D2-4728-80CC-7C4A4EE2278D}.Release|x64.ActiveCfg = Release|x64
+		{B51275BA-71D2-4728-80CC-7C4A4EE2278D}.Release|x64.Build.0 = Release|x64
 		{B51275BA-71D2-4728-80CC-7C4A4EE2278D}.Release|x86.ActiveCfg = Release|Win32
 		{B51275BA-71D2-4728-80CC-7C4A4EE2278D}.Release|x86.Build.0 = Release|Win32
+		{33EB7D16-B4AC-4AE0-BEBD-9485594440FB}.Release|x64.ActiveCfg = Release|x64
+		{33EB7D16-B4AC-4AE0-BEBD-9485594440FB}.Release|x64.Build.0 = Release|x64
 		{33EB7D16-B4AC-4AE0-BEBD-9485594440FB}.Release|x86.ActiveCfg = Release|Win32
 		{33EB7D16-B4AC-4AE0-BEBD-9485594440FB}.Release|x86.Build.0 = Release|Win32
+		{EC65A670-5AFC-4DE0-B16F-EFC2A1B1DF38}.Release|x64.ActiveCfg = Release|x64
+		{EC65A670-5AFC-4DE0-B16F-EFC2A1B1DF38}.Release|x64.Build.0 = Release|x64
 		{EC65A670-5AFC-4DE0-B16F-EFC2A1B1DF38}.Release|x86.ActiveCfg = Release|Win32
 		{EC65A670-5AFC-4DE0-B16F-EFC2A1B1DF38}.Release|x86.Build.0 = Release|Win32
+		{631B8319-11BF-4444-95FF-7C4647406708}.Release|x64.ActiveCfg = Release|x64
+		{631B8319-11BF-4444-95FF-7C4647406708}.Release|x64.Build.0 = Release|x64
 		{631B8319-11BF-4444-95FF-7C4647406708}.Release|x86.ActiveCfg = Release|Win32
 		{631B8319-11BF-4444-95FF-7C4647406708}.Release|x86.Build.0 = Release|Win32
+		{207FB284-A38E-4613-9A2D-CE5B476D5F6A}.Release|x64.ActiveCfg = Release|x64
+		{207FB284-A38E-4613-9A2D-CE5B476D5F6A}.Release|x64.Build.0 = Release|x64
+		{207FB284-A38E-4613-9A2D-CE5B476D5F6A}.Release|x86.ActiveCfg = Release|Win32
+		{207FB284-A38E-4613-9A2D-CE5B476D5F6A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
