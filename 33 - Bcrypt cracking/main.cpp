@@ -3,9 +3,9 @@
 #include <vector>
 #include <fstream>
 #include <chrono>
-#include "bcrypt.h"
 #include <thread>
 #include <mutex>
+#include "bcrypt.h"
 
 
 std::vector< std::string > g_vPasswords;
@@ -36,7 +36,6 @@ void ReadHashes( void ) {
 std::string findPasswordFromHash( void ) {
 	std::string strFound;
 	for ( auto& word : g_vPasswords ) {
-
 		if ( !strFound.empty( ) )
 			return strFound;
 
@@ -51,7 +50,6 @@ std::string findPasswordFromHash( void ) {
 				bcrypt.setKey( word );
 				bcrypt.setHash( hash );
 				if ( bcrypt.compare( ) ) {
-					//return word;
 					strFound = word;
 					std::cout << "Found! Hash: " << hash << " Word: " << word << std::endl;
 				}
