@@ -1,3 +1,6 @@
+/*
+from https://github.com/lassir/bcrypt-samp
+*/
 #include <random>
 
 #include "bcrypt.h"

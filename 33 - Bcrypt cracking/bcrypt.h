@@ -1,3 +1,6 @@
+/*
+from https://github.com/lassir/bcrypt-samp
+*/
 #ifndef BCRYPT_H
 #define BCRYPT_H
 
