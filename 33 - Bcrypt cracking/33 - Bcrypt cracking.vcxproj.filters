@@ -32,9 +32,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="crypt_blowfish\crypt.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="crypt_blowfish\crypt_blowfish.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>

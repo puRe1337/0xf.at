@@ -154,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bcrypt.h" />
-    <ClInclude Include="crypt_blowfish\crypt.h" />
     <ClInclude Include="crypt_blowfish\crypt_blowfish.h" />
     <ClInclude Include="crypt_blowfish\crypt_gensalt.h" />
     <ClInclude Include="crypt_blowfish\ow-crypt.h" />
