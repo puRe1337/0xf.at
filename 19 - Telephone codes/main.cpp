@@ -69,7 +69,7 @@ int main( void ) {
 	std::cout << summe << std::endl;
 
 	auto end = std::chrono::high_resolution_clock::now( );
-	std::cout << "took: " << std::chrono::duration_cast< std::chrono::microseconds >( end - start ).count( ) << " microseconds" << std::endl;
+	std::cout << "took: " << std::chrono::duration< double, std::milli >( end - start ).count( ) << " ms" << std::endl;
 
 	std::cin.ignore( );
 	std::cin.get( );

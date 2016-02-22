@@ -84,7 +84,7 @@ int main( void ) {
 	}
 
 	auto end = std::chrono::high_resolution_clock::now( );
-	std::cout << "took: " << std::chrono::duration_cast< std::chrono::milliseconds >( end - start ).count( ) << " ms" << std::endl;
+	std::cout << "took: " << std::chrono::duration< double, std::milli >( end - start ).count( ) << " ms" << std::endl;
 
 
 
