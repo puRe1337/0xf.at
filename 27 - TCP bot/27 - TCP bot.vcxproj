@@ -88,6 +88,7 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="ErrorFormatter.hpp" />
+    <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />

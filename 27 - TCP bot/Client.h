@@ -9,8 +9,10 @@
 #include <string>
 #include <thread>
 #include <iostream>
+#include <sstream>
 
 #include "ErrorFormatter.hpp"
+#include "Utils.hpp"
 
 class Client
 {
@@ -18,9 +20,13 @@ public:
 	Client(std::string strIP, __int32 iPort );
 	~Client( );
 
+	void Send( const std::string& strText );
+
 private:
 	void Connect( std::string strIP, __int32 iPort );
 	void InfiniteRead( void );
+
+	bool botOn;
 
 	SOCKET m_iSocket;
 };
