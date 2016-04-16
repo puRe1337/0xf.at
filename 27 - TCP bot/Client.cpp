@@ -1,7 +1,7 @@
 #include "Client.h"
 
 
-Client::Client( std::string strIP, __int32 iPort ) : botOn( false )
+Client::Client( std::string strIP, __int32 iPort )
 {
 	Connect( strIP, iPort );
 }
@@ -13,6 +13,11 @@ Client::~Client( )
 void Client::Send( const std::string& strText )
 {
 	send( m_iSocket, strText.c_str( ), strText.length( ), 0 );
+}
+
+void Client::SetRecvCallback( std::function<void( Client*, const std::string& )> fn )
+{
+	m_fnRecvCallback = fn;
 }
 
 void Client::Connect( std::string strIP, __int32 iPort )
@@ -72,58 +77,8 @@ void Client::InfiniteRead( void )
 		res = recv( m_iSocket, &strText[ 0 ], strText.length( ), NULL );
 		if ( res > 0 ) {
 			strText.resize( res );
-			std::cout << strText << std::endl;
 
-			if ( botOn ) {	
-
-				std::vector<std::string> splitted;
-
-				bool add = false, substract = false, multiply = false, divide = false;
-
-				if ( strText.find( "+" ) != std::string::npos ) {
-					splitted = Utils::split( strText, '+' );
-					add = true;
-				}
-				else if ( strText.find( "-" ) != std::string::npos ) {
-					splitted = Utils::split( strText, '-' );
-					substract = true;
-				}
-				else if ( strText.find( "*" ) != std::string::npos ) {
-					splitted = Utils::split( strText, '*' );
-					multiply = true;
-				}
-				else if ( strText.find( "/" ) != std::string::npos ) {
-					splitted = Utils::split( strText, '/' );
-					divide = true;
-				}
-
-
-				if ( splitted.size( ) > 1 ) {
-					// splitted.back( ).resize( splitted.back( ).size( ) - 3 );
-					// std::stoi will ignore any text - http://en.cppreference.com/w/cpp/string/basic_string/stol
-
-					int sum = 0;
-					if ( add )
-						sum = std::stoi( splitted.front( ) ) + std::stoi( splitted.back( ) );
-					else if ( substract )
-						sum = std::stoi( splitted.front( ) ) - std::stoi( splitted.back( ) );
-					else if ( multiply )
-						sum = std::stoi( splitted.front( ) ) * std::stoi( splitted.back( ) );
-					else if ( divide )
-						sum = std::stoi( splitted.front( ) ) / std::stoi( splitted.back( ) );
-
-					std::stringstream ss;
-					ss << sum;
-
-					std::cout << ss.str( ) << std::endl;
-
-					Send( ss.str( ) );
-				}
-			}
-
-			if ( strText.find( "GO" ) != std::string::npos )
-				botOn = true;
-
+			m_fnRecvCallback( this, strText );
 		}
 		
 	} while ( res != 0 );

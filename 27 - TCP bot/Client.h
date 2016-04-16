@@ -10,9 +10,10 @@
 #include <thread>
 #include <iostream>
 #include <sstream>
+#include <functional>
 
 #include "ErrorFormatter.hpp"
-#include "Utils.hpp"
+
 
 class Client
 {
@@ -22,11 +23,13 @@ public:
 
 	void Send( const std::string& strText );
 
+	void SetRecvCallback( std::function<void( Client*, const std::string& )> fn );
+
 private:
 	void Connect( std::string strIP, __int32 iPort );
 	void InfiniteRead( void );
 
-	bool botOn;
+	std::function<void( Client*, const std::string& )> m_fnRecvCallback;
 
 	SOCKET m_iSocket;
 };
