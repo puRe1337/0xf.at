@@ -6,50 +6,22 @@ bool g_botOn = false;
 
 void recvCallback( Client* pClient, const std::string& strText ) {
 	std::cout << strText << std::endl;
-
 	if ( g_botOn ) {
-
 		std::vector<std::string> splitted;
-
-		bool add = false, substract = false, multiply = false, divide = false;
-
-		if ( strText.find( "+" ) != std::string::npos ) {
-			splitted = Utils::split( strText, '+' );
-			add = true;
-		}
-		else if ( strText.find( "-" ) != std::string::npos ) {
-			splitted = Utils::split( strText, '-' );
-			substract = true;
-		}
-		else if ( strText.find( "*" ) != std::string::npos ) {
+		if ( strText.find( "*" ) != std::string::npos ) {
 			splitted = Utils::split( strText, '*' );
-			multiply = true;
-		}
-		else if ( strText.find( "/" ) != std::string::npos ) {
-			splitted = Utils::split( strText, '/' );
-			divide = true;
-		}
+			if ( splitted.size( ) > 1 ) {
+				// splitted.back( ).resize( splitted.back( ).size( ) - 3 );
+				// std::stoi will ignore any text - http://en.cppreference.com/w/cpp/string/basic_string/stol
 
-		if ( splitted.size( ) > 1 ) {
-			// splitted.back( ).resize( splitted.back( ).size( ) - 3 );
-			// std::stoi will ignore any text - http://en.cppreference.com/w/cpp/string/basic_string/stol
+				int sum = std::stoi( splitted.front( ) ) * std::stoi( splitted.back( ) );
 
-			int sum = 0;
-			if ( add )
-				sum = std::stoi( splitted.front( ) ) + std::stoi( splitted.back( ) );
-			else if ( substract )
-				sum = std::stoi( splitted.front( ) ) - std::stoi( splitted.back( ) );
-			else if ( multiply )
-				sum = std::stoi( splitted.front( ) ) * std::stoi( splitted.back( ) );
-			else if ( divide )
-				sum = std::stoi( splitted.front( ) ) / std::stoi( splitted.back( ) );
+				std::stringstream ss;
+				ss << sum;
+				std::cout << ss.str( ) << std::endl;
 
-			std::stringstream ss;
-			ss << sum;
-
-			std::cout << ss.str( ) << std::endl;
-
-			pClient->Send( ss.str( ) );
+				pClient->Send( ss.str( ) );
+			}
 		}
 	}
 
