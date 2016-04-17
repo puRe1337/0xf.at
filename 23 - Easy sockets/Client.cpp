@@ -8,6 +8,8 @@ Client::Client( std::string strIP, __int32 iPort )
 
 Client::~Client( )
 {
+	shutdown( m_iSocket, SD_BOTH );
+	closesocket( m_iSocket );
 }
 
 void Client::Send( const std::string& strText )
