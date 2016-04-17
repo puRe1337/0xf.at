@@ -16,11 +16,7 @@ void recvCallback( Client* pClient, const std::string& strText ) {
 
 				int sum = std::stoi( splitted.front( ) ) * std::stoi( splitted.back( ) );
 
-				std::stringstream ss;
-				ss << sum;
-				std::cout << ss.str( ) << std::endl;
-
-				pClient->Send( ss.str( ) );
+				pClient->Send( std::to_string( sum ).c_str( ) );;
 			}
 		}
 	}
